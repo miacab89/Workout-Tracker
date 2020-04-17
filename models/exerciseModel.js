@@ -1,7 +1,11 @@
 const mongoose = require("mongoose");
-const Seed = mongoose.workoutSeed;
+const Schema = mongoose.workoutSchema;
 
-const workoutSeed = ({
+const workoutSchema = ({
+
+  day: {
+    type: {Date, required: true}
+  },
 
   exercises: {
     type: {String, required: true},
@@ -12,6 +16,6 @@ const workoutSeed = ({
     distance: {Number, required: true}
   }}); 
 
-const workout = mongoose.model("Work Out", workoutSeed);
+const workout = mongoose.model("Work Out", workoutSchema);
 
 module.exports = workout;
